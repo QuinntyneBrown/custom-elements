@@ -1,0 +1,33 @@
+:host {
+    background-color:rgba(0,0,0,0.55);
+    color:rgb(11,160,4);
+    display:block;    
+    font-size:1.5em;
+    padding:20px 20px 5px 20px;    
+
+    h2 {
+        color:#fff;
+        font-size:2em;
+        margin:0;        
+    }
+
+    button {
+        background-color:rgb(11,160,4);
+        border:0px solid;
+        border-radius:0.25em;
+        color:#fff;
+        display:block;        
+        font-size:2em;
+        line-height:1.5em;
+        width: 100%;
+    }
+
+    .call-to-action,
+    .final-note {
+        color:#fff;        
+    }
+
+    .final-note {
+        text-align:center;
+    }
+}

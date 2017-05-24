@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Elements</title>
+    <meta charset="utf-8" />
+    <base href="/">
+    <meta name="viewport"
+          content="user-scalable=no,
+              initial-scale=1,
+              maximum-scale=1,
+              minimum-scale=1,
+              width=device-width,
+              height=device-height,
+              target-densitydpi=device-dpi" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+        
+    <style>
+        body, html {
+            font-family: Montserrat;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+
+</head>
+<body>
+    <script src="dist/ce-cta.js"></script>    
+    <script>
+        let el = document.createElement("ce-cta");
+        el.headline = "Headline";
+        el.body = '<p>1</p><p>2</p><p>3</p>';
+        el.buttonCaption = 'Button Caption';
+        el.callToAction = 'Call To Action';
+        el.finalNote = 'We respect your privacy';
+        document.body.appendChild(el);
+    </script>
+</body>
+</html>
