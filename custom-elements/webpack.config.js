@@ -5,6 +5,8 @@ const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 module.exports = {
     devtool: 'source-map',
     entry: {
+        'ce-add-contact-form': './src/add-contact-form.component',
+        'ce-content-block': './src/content-block.component',
         'ce-cta': './src/cta.component'
     },
     output: {

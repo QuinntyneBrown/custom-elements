@@ -76,6 +76,12 @@
     <Content Include=".gitignore" />
     <Content Include="index.html" />
     <Content Include="packages.config" />
+    <Content Include="src\add-contact-form.component.html">
+      <DependentUpon>add-contact-form.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\add-contact-form.component.scss">
+      <DependentUpon>add-contact-form.component.ts</DependentUpon>
+    </Content>
     <Content Include="src\content-block.component.html">
       <DependentUpon>content-block.component.ts</DependentUpon>
     </Content>
@@ -155,6 +161,7 @@
     <TypeScriptCompile Include="src\cta.component.ts" />
     <TypeScriptCompile Include="src\header.component.ts" />
     <TypeScriptCompile Include="src\content-block.component.ts" />
+    <TypeScriptCompile Include="src\add-contact-form.component.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
 </Project>
