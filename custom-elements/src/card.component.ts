@@ -10,7 +10,9 @@ export class CardComponent extends HTMLElement {
     }
 
     static get observedAttributes () {
-        return [];
+        return [
+            "background-color"
+        ];
     }
 
     connectedCallback() {
@@ -18,6 +20,7 @@ export class CardComponent extends HTMLElement {
         this.shadowRoot.appendChild(document.importNode(template.content, true));          
         this._bind();
         this._setEventListeners();
+        
     }
 
     private async _bind() {
@@ -34,7 +37,8 @@ export class CardComponent extends HTMLElement {
 
     attributeChangedCallback (name, oldValue, newValue) {
         switch (name) {
-            default:
+            case "background-color":
+                this.style.setProperty("--card-background-color", newValue);
                 break;
         }
     }

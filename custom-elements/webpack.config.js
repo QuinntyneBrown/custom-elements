@@ -11,13 +11,13 @@ module.exports = {
             './src/content-block.component',
             './src/cta.component',
             './src/header.component',
-            './src/header-cta.component'
+            './src/mega-header.component'
         ],
         'ce-add-contact-form': './src/add-contact-form.component',
         'ce-content-block': './src/content-block.component',
         'ce-cta': './src/cta.component',
         'ce-header': './src/header.component',
-        'ce-header-cta': './src/header-cta.component'
+        'ce-mega-header': './src/mega-header.component'
     },
     output: {
         path: __dirname + "/dist",

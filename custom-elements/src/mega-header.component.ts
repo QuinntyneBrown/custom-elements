@@ -1,13 +1,13 @@
 import { CtaComponent } from "./cta.component";
 import { HeaderComponent } from "./header.component";
 
-const htmlTemplate = require("./header-cta.component.html");
-const styles = require("./header-cta.component.scss");
+const htmlTemplate = require("./mega-header.component.html");
+const styles = require("./mega-header.component.scss");
 
 const template = document.createElement("template");
 template.innerHTML = `${htmlTemplate}<style>${styles}</style>`;
 
-export class HeaderCtaComponent extends HTMLElement {
+export class MegaHeaderComponent extends HTMLElement {
     constructor() {
         super();
     }
@@ -20,7 +20,7 @@ export class HeaderCtaComponent extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
         this._bind();
-        this._setEventListeners();
+        this._setEventListeners();        
     }
 
     private async _bind() {
@@ -43,4 +43,4 @@ export class HeaderCtaComponent extends HTMLElement {
     }
 }
 
-customElements.define(`ce-header-cta`,HeaderCtaComponent);
+customElements.define(`ce-mega-header`,MegaHeaderComponent);

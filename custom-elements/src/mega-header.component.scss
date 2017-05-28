@@ -1,0 +1,26 @@
+:host {
+    display:block;
+
+    //global resets do not apply to web components
+    * {
+        margin:0;
+        padding:0;
+    }
+}
+
+
+:host(.active) {
+
+}
+
+:host-context(.mobile) {
+
+}
+
+:host-context(.desktop) {
+
+}
+
+:host-context(.large-desktop) {
+
+}
