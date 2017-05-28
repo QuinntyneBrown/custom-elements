@@ -15,18 +15,30 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
         
     <style>
-        body, html {
+        :root {
             font-family: Montserrat;
             margin: 0;
             padding: 0;
+            height:100%;
+        }
+
+        body {
+            height:100vh;
+            padding:0;
+            margin:0;
+        }
+
+        h1 {
+            padding:0;
+            margin:0;
         }
     </style>
 
 
 </head>
 <body>
-    <ce-add-contact-form></ce-add-contact-form>
-    <script src="dist/ce-add-contact-form.js"></script>    
+    <ce-card></ce-card>
+    <script src="dist/all.js"></script>    
     <script>
         //let el = document.createElement("ce-cta");
         //el.headline = "Headline";

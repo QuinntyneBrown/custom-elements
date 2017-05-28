@@ -8,7 +8,7 @@ export class CtaSubmitEvent extends CustomEvent {
     constructor() {
         super("CTA_SUBMIT_EVENT", {
             cancelable: true,
-            bubbles:true
+            bubbles: true
         });
     }
 }

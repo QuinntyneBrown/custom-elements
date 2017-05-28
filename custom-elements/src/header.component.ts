@@ -9,37 +9,25 @@ export class HeaderComponent extends HTMLElement {
         super();
     }
 
-    public backgroundImageUrl: string;
+    public headline1: string;
 
-    static get observedAttributes () {
-        return [];
-    }
+    public headline2: string;
 
+    public get headline1HTMLElement(): HTMLHeadingElement { return this.shadowRoot.querySelector("h2"); }
+
+    public get headline2HTMLElement(): HTMLHeadingElement { return this.shadowRoot.querySelector("h4"); }
+    
     connectedCallback() {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
         this._bind();
-        this._setEventListeners();
     }
 
     private async _bind() {
-
+        this.headline1HTMLElement.textContent = this.headline1;
+        this.headline2HTMLElement.textContent = this.headline2;
     }
-
-    private _setEventListeners() {
-
-    }
-
-    disconnectedCallback() {
-
-    }
-
-    attributeChangedCallback (name, oldValue, newValue) {
-        switch (name) {
-            default:
-                break;
-        }
-    }
+    
 }
 
 customElements.define(`ce-header`,HeaderComponent);

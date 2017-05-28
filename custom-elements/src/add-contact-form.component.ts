@@ -1,8 +1,6 @@
+import {compile} from "./interpolate";
 const htmlTemplate = require("./add-contact-form.component.html");
 const styles = require("./add-contact-form.component.scss");
-
-const template = document.createElement("template");
-template.innerHTML = `${htmlTemplate}<style>${styles}</style>`;
 
 export const ADD_CONTACT_FORM_SUBMITTED = "[ AddContactForm ] ADD_CONTACT_FORM_SUBMITTED";
 
@@ -42,7 +40,7 @@ export class AddContactFormComponent extends HTMLElement {
 
     public city: string;
 
-    public buttonCaption: string;
+    public buttonCaption: any = "Submit";
 
     public get emailHTMLElement(): HTMLInputElement { return this.shadowRoot.querySelector(".email") as HTMLInputElement; }
 
@@ -71,16 +69,18 @@ export class AddContactFormComponent extends HTMLElement {
     
     connectedCallback() {
         this.attachShadow({ mode: 'open' });
+        const template = document.createElement("template");
+        template.innerHTML = `${compile(htmlTemplate, this) }<style>${styles}</style>`;
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
         this._setEventListeners();
     }
     
     private _setEventListeners() {
-        this.buttonHTMLElement.addEventListener("clicl", this.dispatchAddContactFormSubmittedEvent);
+        this.buttonHTMLElement.addEventListener("click", this.dispatchAddContactFormSubmittedEvent);
     }
 
     disconnectedCallback() {
-        this.buttonHTMLElement.removeEventListener("clicl", this.dispatchAddContactFormSubmittedEvent);
+        this.buttonHTMLElement.removeEventListener("click", this.dispatchAddContactFormSubmittedEvent);
     }    
 }
 

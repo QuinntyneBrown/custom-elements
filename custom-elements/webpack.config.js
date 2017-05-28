@@ -5,9 +5,19 @@ const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 module.exports = {
     devtool: 'source-map',
     entry: {
+        'all': [
+            './src/add-contact-form.component',
+            './src/card.component',
+            './src/content-block.component',
+            './src/cta.component',
+            './src/header.component',
+            './src/header-cta.component'
+        ],
         'ce-add-contact-form': './src/add-contact-form.component',
         'ce-content-block': './src/content-block.component',
-        'ce-cta': './src/cta.component'
+        'ce-cta': './src/cta.component',
+        'ce-header': './src/header.component',
+        'ce-header-cta': './src/header-cta.component'
     },
     output: {
         path: __dirname + "/dist",
@@ -26,6 +36,9 @@ module.exports = {
             { test: /\.html$/, loaders: ['html-loader'] },
             { test: /\.ts$/, loaders: ['awesome-typescript-loader'], exclude: /node_modules/ }
         ]
+    },
+    node: {
+        fs: "empty"
     },
     plugins: [
         //new UglifyJsPlugin()

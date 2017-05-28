@@ -82,6 +82,12 @@
     <Content Include="src\add-contact-form.component.scss">
       <DependentUpon>add-contact-form.component.ts</DependentUpon>
     </Content>
+    <Content Include="src\card.component.html">
+      <DependentUpon>card.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\card.component.scss">
+      <DependentUpon>card.component.ts</DependentUpon>
+    </Content>
     <Content Include="src\content-block.component.html">
       <DependentUpon>content-block.component.ts</DependentUpon>
     </Content>
@@ -93,6 +99,12 @@
     </Content>
     <Content Include="src\cta.component.scss">
       <DependentUpon>cta.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\header-cta.component.html">
+      <DependentUpon>header-cta.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\header-cta.component.scss">
+      <DependentUpon>header-cta.component.ts</DependentUpon>
     </Content>
     <Content Include="src\header.component.html">
       <DependentUpon>header.component.ts</DependentUpon>
@@ -162,6 +174,9 @@
     <TypeScriptCompile Include="src\header.component.ts" />
     <TypeScriptCompile Include="src\content-block.component.ts" />
     <TypeScriptCompile Include="src\add-contact-form.component.ts" />
+    <TypeScriptCompile Include="src\header-cta.component.ts" />
+    <TypeScriptCompile Include="src\interpolate.ts" />
+    <TypeScriptCompile Include="src\card.component.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
 </Project>

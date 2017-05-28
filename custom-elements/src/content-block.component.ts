@@ -13,8 +13,14 @@ export class ContentBlockComponent extends HTMLElement {
 
     public headline1: string;
 
-    public headline2: string;
+    public body: string;
 
+    public get headlineHTMLElement(): HTMLHeadingElement { return this.shadowRoot.querySelector("h2"); }
+
+    public get bodyHTMLElement(): HTMLParagraphElement { return this.shadowRoot.querySelector("p"); }
+
+    public get imgHTMLElement(): HTMLImageElement { return this.shadowRoot.querySelector("img"); }
+    
     static get observedAttributes () {
         return [];
     }
@@ -23,26 +29,12 @@ export class ContentBlockComponent extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
         this._bind();
-        this._setEventListeners();
     }
 
     private async _bind() {
-
-    }
-
-    private _setEventListeners() {
-
-    }
-
-    disconnectedCallback() {
-
-    }
-
-    attributeChangedCallback (name, oldValue, newValue) {
-        switch (name) {
-            default:
-                break;
-        }
+        this.headlineHTMLElement.textContent = this.headline1;
+        this.bodyHTMLElement.textContent = this.body;
+        this.imgHTMLElement.src = this.imageUrl;
     }
 }
 
