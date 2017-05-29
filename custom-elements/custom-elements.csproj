@@ -82,6 +82,12 @@
     <Content Include="src\add-contact-form.component.scss">
       <DependentUpon>add-contact-form.component.ts</DependentUpon>
     </Content>
+    <Content Include="src\button.component.html">
+      <DependentUpon>button.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\button.component.scss">
+      <DependentUpon>button.component.ts</DependentUpon>
+    </Content>
     <Content Include="src\card.component.html">
       <DependentUpon>card.component.ts</DependentUpon>
     </Content>
@@ -177,6 +183,7 @@
     <TypeScriptCompile Include="src\mega-header.component.ts" />
     <TypeScriptCompile Include="src\interpolate.ts" />
     <TypeScriptCompile Include="src\card.component.ts" />
+    <TypeScriptCompile Include="src\button.component.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
 </Project>

@@ -1,0 +1,17 @@
+:host {
+	display:inline-block;
+    min-width:125px;
+    line-height:1.75em;
+    font-size:1.25em;
+    border: 1px solid #333;
+    text-align:center;
+    cursor:pointer;
+    color:#333;    
+    border-radius:4px;
+}
+
+
+:host(:hover) {
+    color:#FFF;
+    background-color:#333;
+}

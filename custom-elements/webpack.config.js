@@ -7,6 +7,7 @@ module.exports = {
     entry: {
         'all': [
             './src/add-contact-form.component',
+            './src/button.component',
             './src/card.component',
             './src/content-block.component',
             './src/cta.component',
