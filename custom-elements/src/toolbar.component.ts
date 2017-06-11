@@ -1,13 +1,10 @@
-import { CallToActionComponent } from "./cta.component";
-import { HeaderComponent } from "./header.component";
-
-const htmlTemplate = require("./mega-header.component.html");
-const styles = require("./mega-header.component.scss");
+const html = require("./toolbar.component.html");
+const css = require("./toolbar.component.scss");
 
 const template = document.createElement("template");
-template.innerHTML = `${htmlTemplate}<style>${styles}</style>`;
+template.innerHTML = `<style>${css}</style>${html}`;
 
-export class MegaHeaderComponent extends HTMLElement {
+export class ToolbarComponent extends HTMLElement {
     constructor() {
         super();
     }
@@ -19,8 +16,12 @@ export class MegaHeaderComponent extends HTMLElement {
     connectedCallback() {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
+
+        if (!this.hasAttribute('role'))
+            this.setAttribute('role', 'toolbar');
+
         this._bind();
-        this._setEventListeners();        
+        this._setEventListeners();
     }
 
     private async _bind() {
@@ -43,4 +44,4 @@ export class MegaHeaderComponent extends HTMLElement {
     }
 }
 
-customElements.define(`ce-mega-header`,MegaHeaderComponent);
+customElements.define(`ce-toolbar`,ToolbarComponent);

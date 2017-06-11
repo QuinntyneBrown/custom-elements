@@ -1,19 +1,20 @@
-const htmlTemplate = require("./cta.component.html");
-const styles = require("./cta.component.scss");
+const html = require("./call-to-action.component.html");
+const css = require("./call-to-action.component.scss");
 
 const template = document.createElement("template");
-template.innerHTML = `${htmlTemplate}<style>${styles}</style>`;
+template.innerHTML = `<style>${css}</style>${html}`;
 
-export class CtaSubmitEvent extends CustomEvent {
+export class CallToActionSubmitEvent extends CustomEvent {
     constructor() {
-        super("CTA_SUBMIT_EVENT", {
+        super("[Call To Action] Submit", {
             cancelable: true,
-            bubbles: true
-        });
+            bubbles: true,
+            composed: true
+        } as CustomEventInit);
     }
 }
 
-export class CtaComponent extends HTMLElement {
+export class CallToActionComponent extends HTMLElement {
     constructor() {
         super();
         this.dispatchSubmitEvent = this.dispatchSubmitEvent.bind(this);
@@ -22,14 +23,14 @@ export class CtaComponent extends HTMLElement {
     public headline: string;
 
     public body: string;
-    
+
     public buttonCaption: string;
 
     public callToAction: string;
 
     public finalNote: string;
 
-    public dispatchSubmitEvent() { this.dispatchEvent(new CtaSubmitEvent()); }
+    public dispatchSubmitEvent() { this.dispatchEvent(new CallToActionSubmitEvent()); }
 
     public get headlineHTMLElement(): HTMLElement { return this.shadowRoot.querySelector(".headline") as HTMLElement; }
 
@@ -43,12 +44,15 @@ export class CtaComponent extends HTMLElement {
 
     connectedCallback() {
         this.attachShadow({ mode: 'open' });
-        this.shadowRoot.appendChild(document.importNode(template.content, true));  
+        this.shadowRoot.appendChild(document.importNode(template.content, true));
         this._bind();
         this._setEventListeners();
     }
 
     private async _bind() {
+        if (!this.hasAttribute('role'))
+            this.setAttribute('role', 'calltoaction');
+
         this.headlineHTMLElement.textContent = this.headline;
         this.bodyHTMLElement.innerHTML = this.body;
         this.buttonHTMLElement.textContent = this.buttonCaption;
@@ -65,4 +69,4 @@ export class CtaComponent extends HTMLElement {
     }
 }
 
-customElements.define(`ce-cta`,CtaComponent);
+customElements.define(`ce-call-to-action`, CallToActionComponent);

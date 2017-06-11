@@ -10,13 +10,13 @@ module.exports = {
             './src/button.component',
             './src/card.component',
             './src/content-block.component',
-            './src/cta.component',
+            './src/call-to-action.component',
             './src/header.component',
             './src/mega-header.component'
         ],
         'ce-add-contact-form': './src/add-contact-form.component',
         'ce-content-block': './src/content-block.component',
-        'ce-cta': './src/cta.component',
+        'ce-call-to-action': './src/call-to-action.component',
         'ce-header': './src/header.component',
         'ce-mega-header': './src/mega-header.component'
     },
