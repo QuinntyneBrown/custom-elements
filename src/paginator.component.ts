@@ -35,6 +35,7 @@ export function validatePagePropertiesAndGetSkipCount(pagingConfig: PagingConfig
 
 export class PagedList<T> implements IPagedList<T> {
     constructor(private _data: Array<T>, private _page: number, private _pageSize: number, private _totalCount: number) { }
+
     get data(): Array<T> { return this._data; }
     get page(): number { return this._page; }
     get pageSize(): number { return this._pageSize; }
@@ -43,15 +44,17 @@ export class PagedList<T> implements IPagedList<T> {
 }
 
 
-export abstract class PaginatorComponent<T> extends HTMLElement {
+export class PaginatorComponent<T> extends HTMLElement {
     constructor(public pageSize: number, public pageNumber: number, private _nextCssClass: string, private _previousCssClass: string) {
         super();
         this.onNext = this.onNext.bind(this);
         this.onPrevious = this.onPrevious.bind(this);
     }
 
-    connectedCallback(options: { template: string, styles: string }) {
-        this.innerHTML = `<style>${options.styles}</style> ${options.template}`;
+    connectedCallback() {
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.appendChild(document.importNode(template.content, true)); 
+
         this._nextElement.addEventListener("click", this.onNext);
         this._previousElement.addEventListener("click", this.onPrevious);
         this.setEventListeners();
@@ -62,14 +65,19 @@ export abstract class PaginatorComponent<T> extends HTMLElement {
 
     }
 
-    public abstract bind();
+    public bind() {
+
+    }
 
     disconnectedCallback() {
         this._nextElement.removeEventListener("click", this.onNext);
         this._previousElement.removeEventListener("click", this.onPrevious);
     }
 
-    public abstract render();
+    public render() {
+
+    }
+
     public pagedList: IPagedList<T>;
     public entities: Array<T>;
 
@@ -95,9 +103,9 @@ export abstract class PaginatorComponent<T> extends HTMLElement {
         this.render();
     }
 
-    private get _nextElement(): HTMLElement { return this.querySelector(this._nextCssClass) as HTMLElement; }
+    private get _nextElement(): HTMLElement { return this.shadowRoot.querySelector(this._nextCssClass) as HTMLElement; }
 
-    private get _previousElement(): HTMLElement { return this.querySelector(this._previousCssClass) as HTMLElement; }
+    private get _previousElement(): HTMLElement { return this.shadowRoot.querySelector(this._previousCssClass) as HTMLElement; }
 }
 
 customElements.define(`ce-paginator`,PaginatorComponent);
