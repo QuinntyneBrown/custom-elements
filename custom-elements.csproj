@@ -106,6 +106,12 @@
     <Content Include="src\content-block.component.scss">
       <DependentUpon>content-block.component.ts</DependentUpon>
     </Content>
+    <Content Include="src\data-grid.component.html">
+      <DependentUpon>data-grid.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\data-grid.component.scss">
+      <DependentUpon>data-grid.component.ts</DependentUpon>
+    </Content>
     <Content Include="src\header.component.html">
       <DependentUpon>header.component.ts</DependentUpon>
     </Content>
@@ -187,6 +193,7 @@
     <TypeScriptCompile Include="src\call-to-action.component.ts" />
     <TypeScriptCompile Include="src\toolbar.component.ts" />
     <TypeScriptCompile Include="src\input-container.component.ts" />
+    <TypeScriptCompile Include="src\data-grid.component.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
 </Project>

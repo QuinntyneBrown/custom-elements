@@ -2,7 +2,7 @@ import {compile} from "./interpolate";
 const htmlTemplate = require("./add-contact-form.component.html");
 const styles = require("./add-contact-form.component.scss");
 
-export const ADD_CONTACT_FORM_SUBMITTED = "[ AddContactForm ] ADD_CONTACT_FORM_SUBMITTED";
+export const ADD_CONTACT_FORM_SUBMITTED = "[AddContactForm] ADD_CONTACT_FORM_SUBMITTED";
 
 declare interface Contact {
     firstname: string;

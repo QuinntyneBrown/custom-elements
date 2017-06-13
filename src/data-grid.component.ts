@@ -1,13 +1,10 @@
-import { CallToActionComponent } from "./call-to-action.component";
-import { HeaderComponent } from "./header.component";
-
-const htmlTemplate = require("./mega-header.component.html");
-const styles = require("./mega-header.component.scss");
+const html = require("./data-grid.component.html");
+const css = require("./data-grid.component.scss");
 
 const template = document.createElement("template");
-template.innerHTML = `${htmlTemplate}<style>${styles}</style>`;
+template.innerHTML = `<style>${css}</style>${html}`;
 
-export class MegaHeaderComponent extends HTMLElement {
+export class DataGridComponent extends HTMLElement {
     constructor() {
         super();
     }
@@ -19,8 +16,12 @@ export class MegaHeaderComponent extends HTMLElement {
     connectedCallback() {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
+
+        if (!this.hasAttribute('role'))
+            this.setAttribute('role', 'datagrid');
+
         this._bind();
-        this._setEventListeners();        
+        this._setEventListeners();
     }
 
     private async _bind() {
@@ -43,4 +44,4 @@ export class MegaHeaderComponent extends HTMLElement {
     }
 }
 
-customElements.define(`ce-mega-header`,MegaHeaderComponent);
+customElements.define(`ce-data-grid`,DataGridComponent);
