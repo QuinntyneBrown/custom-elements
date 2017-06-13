@@ -130,6 +130,12 @@
     <Content Include="src\mega-header.component.scss">
       <DependentUpon>mega-header.component.ts</DependentUpon>
     </Content>
+    <Content Include="src\paginator.component.html">
+      <DependentUpon>paginator.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\paginator.component.scss">
+      <DependentUpon>paginator.component.ts</DependentUpon>
+    </Content>
     <Content Include="src\toolbar.component.html">
       <DependentUpon>toolbar.component.ts</DependentUpon>
     </Content>
@@ -194,6 +200,7 @@
     <TypeScriptCompile Include="src\toolbar.component.ts" />
     <TypeScriptCompile Include="src\input-container.component.ts" />
     <TypeScriptCompile Include="src\data-grid.component.ts" />
+    <TypeScriptCompile Include="src\paginator.component.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
 </Project>

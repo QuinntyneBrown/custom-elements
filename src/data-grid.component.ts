@@ -1,3 +1,5 @@
+import "./paginator.component";
+
 const html = require("./data-grid.component.html");
 const css = require("./data-grid.component.scss");
 
