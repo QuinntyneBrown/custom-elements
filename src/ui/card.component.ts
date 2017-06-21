@@ -1,8 +1,8 @@
-const htmlTemplate = require("./card.component.html");
-const styles = require("./card.component.scss");
+const html = require("./card.component.html");
+const css = require("./card.component.scss");
 
 const template = document.createElement("template");
-template.innerHTML = `${htmlTemplate}<style>${styles}</style>`;
+template.innerHTML = `<style>${css}</style>${html}`;
 
 export class CardComponent extends HTMLElement {
     constructor() {

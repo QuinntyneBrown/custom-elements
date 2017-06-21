@@ -1,10 +1,9 @@
-import {compile} from "./interpolate";
-const htmlTemplate = require("./add-contact-form.component.html");
-const styles = require("./add-contact-form.component.scss");
+const html = require("./add-contact-form.component.html");
+const css = require("./add-contact-form.component.scss");
 
 export const ADD_CONTACT_FORM_SUBMITTED = "[AddContactForm] ADD_CONTACT_FORM_SUBMITTED";
 
-declare interface Contact {
+export interface Contact {
     firstname: string;
     lastname: string;    
     streetAddress: string;
@@ -18,8 +17,9 @@ export class AddContactFormSubmitted extends CustomEvent {
         super(ADD_CONTACT_FORM_SUBMITTED, {
             cancelable: true,
             bubbles: true,
+            composed: true,
             detail: { contact }
-        });
+        } as CustomEventInit);
     }
 }
 
@@ -70,7 +70,7 @@ export class AddContactFormComponent extends HTMLElement {
     connectedCallback() {
         this.attachShadow({ mode: 'open' });
         const template = document.createElement("template");
-        template.innerHTML = `${compile(htmlTemplate, this) }<style>${styles}</style>`;
+        template.innerHTML = `${html}<style>${css}</style>`;
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
         this._setEventListeners();
     }

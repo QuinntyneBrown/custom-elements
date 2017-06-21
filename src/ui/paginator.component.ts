@@ -4,7 +4,7 @@ const css = require("./paginator.component.scss");
 const template = document.createElement("template");
 template.innerHTML = `<style>${css}</style>${html}`;
 
-declare interface IPagedList<T> {
+export interface IPagedList<T> {
     data: Array<T>;
     page: number;
     pageSize: number;

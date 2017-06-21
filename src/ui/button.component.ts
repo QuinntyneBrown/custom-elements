@@ -1,8 +1,8 @@
-const htmlTemplate = require("./button.component.html");
-const styles = require("./button.component.scss");
+const html = require("./button.component.html");
+const css = require("./button.component.scss");
 
 const template = document.createElement("template");
-template.innerHTML = `${htmlTemplate}<style>${styles}</style>`;
+template.innerHTML = `<style>${css}</style>${html}`;
 
 export class ButtonComponent extends HTMLElement {    
     connectedCallback() {

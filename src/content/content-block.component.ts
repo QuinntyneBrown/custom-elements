@@ -1,8 +1,8 @@
-const htmlTemplate = require("./content-block.component.html");
-const styles = require("./content-block.component.scss");
+const html = require("./content-block.component.html");
+const css = require("./content-block.component.scss");
 
 const template = document.createElement("template");
-template.innerHTML = `${htmlTemplate}<style>${styles}</style>`;
+template.innerHTML = `<style>${css}</style>${html}`;
 
 export class ContentBlockComponent extends HTMLElement {
     constructor() {
