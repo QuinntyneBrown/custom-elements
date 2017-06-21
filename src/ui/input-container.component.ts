@@ -1,8 +1,11 @@
-const html = require("./input-container.component.html");
-const css = require("./input-container.component.scss");
+declare var System: any;
 
 const template = document.createElement("template");
-template.innerHTML = `<style>${css}</style>${html}`;
+
+const promises = Promise.all([
+    System.import("./input-container.component.html"),
+    System.import("./input-container.component.css")
+]);
 
 export class InputContainerComponent extends HTMLElement {
     constructor() {
@@ -13,7 +16,12 @@ export class InputContainerComponent extends HTMLElement {
         return [];
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+
+        const assests = await promises;
+        
+        template.innerHTML = `<style>${assests[1]}</style>${assests[0]}`; 
+
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
 

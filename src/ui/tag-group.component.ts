@@ -1,10 +1,11 @@
-import "./tag.component";
-
-const html = require("./tag-group.component.html");
-const css = require("./tag-group.component.scss");
+declare var System: any;
 
 const template = document.createElement("template");
-template.innerHTML = `<style>${css}</style>${html}`;
+
+const promises = Promise.all([
+    System.import("./tag-group.component.html"),
+    System.import("./tag-group.component.css")
+]);
 
 export class TagGroupComponent extends HTMLElement {
     constructor() {
@@ -12,12 +13,15 @@ export class TagGroupComponent extends HTMLElement {
     }
 
     static get observedAttributes () {
-        return [
-            "tags"
-        ];
+        return [];
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+
+        const assests = await promises;
+        
+        template.innerHTML = `<style>${assests[1]}</style>${assests[0]}`; 
+
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
 
@@ -40,12 +44,9 @@ export class TagGroupComponent extends HTMLElement {
 
     }
 
-    private _tags: Array<string>[];
-
     attributeChangedCallback (name, oldValue, newValue) {
         switch (name) {
-            case "tags":
-                this._tags = newValue;
+            default:
                 break;
         }
     }

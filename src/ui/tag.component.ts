@@ -1,8 +1,11 @@
-const html = require("./tag.component.html");
-const css = require("./tag.component.scss");
+declare var System: any;
 
 const template = document.createElement("template");
-template.innerHTML = `<style>${css}</style>${html}`;
+
+const promises = Promise.all([
+    System.import("./tag.component.html"),
+    System.import("./tag.component.css")
+]);
 
 export class TagComponent extends HTMLElement {
     constructor() {
@@ -13,7 +16,12 @@ export class TagComponent extends HTMLElement {
         return [];
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+
+        const assests = await promises;
+        
+        template.innerHTML = `<style>${assests[1]}</style>${assests[0]}`; 
+
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
 
@@ -33,10 +41,6 @@ export class TagComponent extends HTMLElement {
     }
 
     disconnectedCallback() {
-
-    }
-
-    public dispatchTagClickEvent() {
 
     }
 

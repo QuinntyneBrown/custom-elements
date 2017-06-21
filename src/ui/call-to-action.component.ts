@@ -1,8 +1,11 @@
-const html = require("./call-to-action.component.html");
-const css = require("./call-to-action.component.scss");
+declare var System: any;
 
 const template = document.createElement("template");
-template.innerHTML = `<style>${css}</style>${html}`;
+
+const promises = Promise.all([
+    System.import("./button.component.html"),
+    System.import("./button.component.css")
+]);
 
 export class CallToActionSubmitEvent extends CustomEvent {
     constructor() {
@@ -42,8 +45,10 @@ export class CallToActionComponent extends HTMLElement {
 
     public get finalNoteHTMLElement(): HTMLElement { return this.shadowRoot.querySelector(".final-note") as HTMLElement; }
 
-    connectedCallback() {
+    async connectedCallback() {
         this.attachShadow({ mode: 'open' });
+        const assests = await promises;
+        template.innerHTML = `<style>${assests[1]}</style>${assests[0]}`;
         this.shadowRoot.appendChild(document.importNode(template.content, true));
         this._bind();
         this._setEventListeners();

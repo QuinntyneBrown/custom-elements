@@ -1,8 +1,11 @@
-const html = require("./card.component.html");
-const css = require("./card.component.scss");
+declare var System: any;
 
 const template = document.createElement("template");
-template.innerHTML = `<style>${css}</style>${html}`;
+
+const promises = Promise.all([
+    System.import("./card.component.html"),
+    System.import("./card.component.css")
+]);
 
 export class CardComponent extends HTMLElement {
     constructor() {
@@ -15,7 +18,9 @@ export class CardComponent extends HTMLElement {
         ];
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+        const assests = await promises;
+        template.innerHTML = `<style>${assests[1]}</style>${assests[0]}`; 
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));          
         this._bind();

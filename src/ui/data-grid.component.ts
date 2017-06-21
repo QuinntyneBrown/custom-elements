@@ -1,10 +1,11 @@
-import "./paginator.component";
-
-const html = require("./data-grid.component.html");
-const css = require("./data-grid.component.scss");
+declare var System: any;
 
 const template = document.createElement("template");
-template.innerHTML = `<style>${css}</style>${html}`;
+
+const promises = Promise.all([
+    System.import("./data-grid.component.html"),
+    System.import("./data-grid.component.css")
+]);
 
 export class DataGridComponent extends HTMLElement {
     constructor() {
@@ -15,7 +16,12 @@ export class DataGridComponent extends HTMLElement {
         return [];
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+
+        const assests = await promises;
+        
+        template.innerHTML = `<style>${assests[1]}</style>${assests[0]}`; 
+
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
 

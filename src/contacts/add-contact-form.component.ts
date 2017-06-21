@@ -1,6 +1,11 @@
-const html = require("./add-contact-form.component.html");
-const css = require("./add-contact-form.component.scss");
+declare var System: any;
 
+const template = document.createElement("template");
+
+const promises = Promise.all([
+    System.import("./add-contact-form.component.html"),
+    System.import("./add-contact-form.component.css")
+]);
 export const ADD_CONTACT_FORM_SUBMITTED = "[AddContactForm] ADD_CONTACT_FORM_SUBMITTED";
 
 export interface Contact {
@@ -67,10 +72,10 @@ export class AddContactFormComponent extends HTMLElement {
         }));
     }
     
-    connectedCallback() {
+    async connectedCallback() {
+        const assests = await promises;
+        template.innerHTML = `<style>${assests[1]}</style>${assests[0]}`; 
         this.attachShadow({ mode: 'open' });
-        const template = document.createElement("template");
-        template.innerHTML = `${html}<style>${css}</style>`;
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
         this._setEventListeners();
     }

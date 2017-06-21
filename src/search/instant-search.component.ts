@@ -1,9 +1,11 @@
-const html = require("./instant-search.component.html");
-const css = require("./instant-search.component.scss");
+declare var System: any;
 
 const template = document.createElement("template");
-template.innerHTML = `${html}`;
 
+const promises = Promise.all([
+    System.import("./instant-search.component.html"),
+    System.import("./instant-search.component.css")
+]);
 
 export class InstantSearchComponent extends HTMLElement {
     constructor() {
@@ -14,7 +16,12 @@ export class InstantSearchComponent extends HTMLElement {
         return [];
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+
+        const assests = await promises;
+        
+        template.innerHTML = `<style>${assests[1]}</style>${assests[0]}`; 
+
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
 

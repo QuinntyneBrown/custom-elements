@@ -77,42 +77,33 @@
       <DependentUpon>add-contact-form.component.html</DependentUpon>
     </Content>
     <Content Include="src\contacts\add-contact-form.component.html" />
-    <Content Include="src\ui\button.component.html">
-      <DependentUpon>button.component.ts</DependentUpon>
+    <Content Include="src\content\content-block.component.css">
+      <DependentUpon>content-block.component.html</DependentUpon>
     </Content>
-    <Content Include="src\ui\button.component.scss">
-      <DependentUpon>button.component.ts</DependentUpon>
+    <Content Include="src\content\content-block.component.html" />
+    <Content Include="src\search\instant-search.component.css">
+      <DependentUpon>instant-search.component.html</DependentUpon>
     </Content>
-    <Content Include="src\ui\call-to-action.component.html">
-      <DependentUpon>call-to-action.component.ts</DependentUpon>
+    <Content Include="src\ui\button.component.css">
+      <DependentUpon>button.component.html</DependentUpon>
     </Content>
-    <Content Include="src\ui\call-to-action.component.scss">
-      <DependentUpon>call-to-action.component.ts</DependentUpon>
+    <Content Include="src\ui\button.component.html" />
+    <Content Include="src\ui\call-to-action.component.css">
+      <DependentUpon>call-to-action.component.html</DependentUpon>
     </Content>
-    <Content Include="src\ui\card.component.html">
-      <DependentUpon>card.component.ts</DependentUpon>
+    <Content Include="src\ui\call-to-action.component.html" />
+    <Content Include="src\ui\card.component.css">
+      <DependentUpon>card.component.html</DependentUpon>
     </Content>
-    <Content Include="src\ui\card.component.scss">
-      <DependentUpon>card.component.ts</DependentUpon>
+    <Content Include="src\ui\card.component.html" />
+    <Content Include="src\ui\carousel.component.css">
+      <DependentUpon>carousel.component.html</DependentUpon>
     </Content>
-    <Content Include="src\ui\carousel.component.html">
-      <DependentUpon>carousel.component.ts</DependentUpon>
+    <Content Include="src\ui\carousel.component.html" />
+    <Content Include="src\ui\data-grid.component.css">
+      <DependentUpon>data-grid.component.html</DependentUpon>
     </Content>
-    <Content Include="src\ui\carousel.component.scss">
-      <DependentUpon>carousel.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\content\content-block.component.html">
-      <DependentUpon>content-block.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\content\content-block.component.scss">
-      <DependentUpon>content-block.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\ui\data-grid.component.html">
-      <DependentUpon>data-grid.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\ui\data-grid.component.scss">
-      <DependentUpon>data-grid.component.ts</DependentUpon>
-    </Content>
+    <Content Include="src\ui\data-grid.component.html" />
     <Content Include="src\ui\footer.component.css">
       <DependentUpon>footer.component.html</DependentUpon>
     </Content>
@@ -120,51 +111,30 @@
       <DependentUpon>header.component.html</DependentUpon>
     </Content>
     <Content Include="src\ui\header.component.html" />
-    <Content Include="src\ui\input-container.component.html">
-      <DependentUpon>input-container.component.ts</DependentUpon>
+    <Content Include="src\ui\input-container.component.css">
+      <DependentUpon>input-container.component.html</DependentUpon>
     </Content>
-    <Content Include="src\ui\input-container.component.scss">
-      <DependentUpon>input-container.component.ts</DependentUpon>
+    <Content Include="src\ui\input-container.component.html" />
+    <Content Include="src\ui\mega-header.component.css">
+      <DependentUpon>mega-header.component.html</DependentUpon>
     </Content>
-    <Content Include="src\search\instant-search.component.html">
-      <DependentUpon>instant-search.component.ts</DependentUpon>
+    <Content Include="src\ui\mega-header.component.html" />
+    <Content Include="src\ui\tag-group.component.css">
+      <DependentUpon>tag-group.component.html</DependentUpon>
     </Content>
-    <Content Include="src\search\instant-search.component.scss">
-      <DependentUpon>instant-search.component.ts</DependentUpon>
+    <Content Include="src\ui\tag-group.component.html" />
+    <Content Include="src\ui\tag.component.css">
+      <DependentUpon>tag.component.html</DependentUpon>
     </Content>
-    <Content Include="src\ui\mega-header.component.html">
-      <DependentUpon>mega-header.component.ts</DependentUpon>
+    <Content Include="src\ui\tag.component.html" />
+    <Content Include="src\ui\toolbar.component.css">
+      <DependentUpon>toolbar.component.html</DependentUpon>
     </Content>
-    <Content Include="src\ui\mega-header.component.scss">
-      <DependentUpon>mega-header.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\ui\paginator.component.html">
-      <DependentUpon>paginator.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\ui\paginator.component.scss">
-      <DependentUpon>paginator.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\ui\tag-group.component.html">
-      <DependentUpon>tag-group.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\ui\tag-group.component.scss">
-      <DependentUpon>tag-group.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\ui\tag.component.html">
-      <DependentUpon>tag.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\ui\tag.component.scss">
-      <DependentUpon>tag.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\ui\toolbar.component.html">
-      <DependentUpon>toolbar.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\ui\toolbar.component.scss">
-      <DependentUpon>toolbar.component.ts</DependentUpon>
-    </Content>
+    <Content Include="src\ui\toolbar.component.html" />
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
     <Content Include="src\ui\footer.component.html" />
+    <Content Include="src\search\instant-search.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -211,30 +181,54 @@
     <TypeScriptCompile Include="src\contacts\add-contact-form.component.ts">
       <DependentUpon>add-contact-form.component.html</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\content\content-block.component.ts">
+      <DependentUpon>content-block.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\search\instant-search.component.ts">
+      <DependentUpon>instant-search.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\ui\button.component.ts">
+      <DependentUpon>button.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\ui\call-to-action.component.ts">
+      <DependentUpon>call-to-action.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\ui\card.component.ts">
+      <DependentUpon>card.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\ui\carousel.component.ts">
+      <DependentUpon>carousel.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\ui\data-grid.component.ts">
+      <DependentUpon>data-grid.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\ui\footer.component.ts">
       <DependentUpon>footer.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="src\content\content-block.component.ts" />
     <TypeScriptCompile Include="src\ui\header.component.ts">
       <DependentUpon>header.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="src\ui\mega-header.component.ts" />
-    <TypeScriptCompile Include="src\ui\card.component.ts" />
-    <TypeScriptCompile Include="src\ui\button.component.ts" />
-    <TypeScriptCompile Include="src\ui\call-to-action.component.ts" />
-    <TypeScriptCompile Include="src\ui\toolbar.component.ts" />
-    <TypeScriptCompile Include="src\ui\input-container.component.ts" />
-    <TypeScriptCompile Include="src\ui\data-grid.component.ts" />
+    <TypeScriptCompile Include="src\ui\input-container.component.ts">
+      <DependentUpon>input-container.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\ui\mega-header.component.ts">
+      <DependentUpon>mega-header.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\ui\tag-group.component.ts">
+      <DependentUpon>tag-group.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\ui\tag.component.ts">
+      <DependentUpon>tag.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\ui\paginator.component.ts" />
-    <TypeScriptCompile Include="src\ui\carousel.component.ts" />
-    <TypeScriptCompile Include="src\ui\tag-group.component.ts" />
-    <TypeScriptCompile Include="src\ui\tag.component.ts" />
-    <TypeScriptCompile Include="src\search\instant-search.component.ts" />
     <TypeScriptCompile Include="src\index.ts" />
     <TypeScriptCompile Include="src\contacts\index.ts" />
     <TypeScriptCompile Include="src\ui\index.ts" />
     <TypeScriptCompile Include="src\search\index.ts" />
     <TypeScriptCompile Include="src\content\index.ts" />
+    <TypeScriptCompile Include="src\ui\toolbar.component.ts">
+      <DependentUpon>toolbar.component.html</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
 </Project>

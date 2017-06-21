@@ -1,11 +1,11 @@
-import { CallToActionComponent } from "./call-to-action.component";
-import { HeaderComponent } from "./header.component";
-
-const htmlTemplate = require("./mega-header.component.html");
-const styles = require("./mega-header.component.scss");
+declare var System: any;
 
 const template = document.createElement("template");
-template.innerHTML = `${htmlTemplate}<style>${styles}</style>`;
+
+const promises = Promise.all([
+    System.import("./mega-header.component.html"),
+    System.import("./mega-header.component.css")
+]);
 
 export class MegaHeaderComponent extends HTMLElement {
     constructor() {
@@ -16,11 +16,20 @@ export class MegaHeaderComponent extends HTMLElement {
         return [];
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+
+        const assests = await promises;
+        
+        template.innerHTML = `<style>${assests[1]}</style>${assests[0]}`; 
+
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
+
+        if (!this.hasAttribute('role'))
+            this.setAttribute('role', 'megaheader');
+
         this._bind();
-        this._setEventListeners();        
+        this._setEventListeners();
     }
 
     private async _bind() {
