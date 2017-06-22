@@ -8,6 +8,8 @@ export * from "./hamburger-button.component";
 export * from "./header.component";
 export * from "./input-container.component";
 export * from "./mega-header.component";
+export * from "./nav-item.component";
+export * from "./nav.component";
 export * from "./paginator.component";
 export * from "./tag-group.component";
 export * from "./tag.component";

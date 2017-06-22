@@ -125,6 +125,12 @@
       <DependentUpon>mega-header.component.html</DependentUpon>
     </Content>
     <Content Include="src\ui\mega-header.component.html" />
+    <Content Include="src\ui\nav-item.component.css">
+      <DependentUpon>nav-item.component.html</DependentUpon>
+    </Content>
+    <Content Include="src\ui\nav.component.css">
+      <DependentUpon>nav.component.html</DependentUpon>
+    </Content>
     <Content Include="src\ui\tag-group.component.css">
       <DependentUpon>tag-group.component.html</DependentUpon>
     </Content>
@@ -142,6 +148,8 @@
     <Content Include="src\ui\footer.component.html" />
     <Content Include="src\search\instant-search.component.html" />
     <Content Include="src\ui\hamburger-button.component.html" />
+    <Content Include="src\ui\nav.component.html" />
+    <Content Include="src\ui\nav-item.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -224,6 +232,12 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\ui\mega-header.component.ts">
       <DependentUpon>mega-header.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\ui\nav-item.component.ts">
+      <DependentUpon>nav-item.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\ui\nav.component.ts">
+      <DependentUpon>nav.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\ui\tag-group.component.ts">
       <DependentUpon>tag-group.component.html</DependentUpon>
