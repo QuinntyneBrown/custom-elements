@@ -6,7 +6,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion></ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{2580F151-CD63-4282-8917-3B2CC0638C27}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -21,7 +22,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.2</TypeScriptToolsVersion>
     <TypeScriptEmitDecoratorMetadata>true</TypeScriptEmitDecoratorMetadata>
     <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
@@ -72,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="gulpfile.js" />
     <Content Include="packages.config" />
     <Content Include="src\contacts\add-contact-form.component.css">
       <DependentUpon>add-contact-form.component.html</DependentUpon>
@@ -107,6 +110,9 @@
     <Content Include="src\ui\footer.component.css">
       <DependentUpon>footer.component.html</DependentUpon>
     </Content>
+    <Content Include="src\ui\hamburger-button.component.css">
+      <DependentUpon>hamburger-button.component.html</DependentUpon>
+    </Content>
     <Content Include="src\ui\header.component.css">
       <DependentUpon>header.component.html</DependentUpon>
     </Content>
@@ -135,6 +141,7 @@
     <Content Include="tsconfig.json" />
     <Content Include="src\ui\footer.component.html" />
     <Content Include="src\search\instant-search.component.html" />
+    <Content Include="src\ui\hamburger-button.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -157,7 +164,8 @@
           <IISUrl>http://localhost:63361/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl></CustomServerUrl>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
@@ -204,6 +212,9 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\ui\footer.component.ts">
       <DependentUpon>footer.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\ui\hamburger-button.component.ts">
+      <DependentUpon>hamburger-button.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\ui\header.component.ts">
       <DependentUpon>header.component.html</DependentUpon>

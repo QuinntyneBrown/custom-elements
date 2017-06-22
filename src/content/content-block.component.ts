@@ -1,5 +1,5 @@
 const html = require("./content-block.component.html");
-const css = require("./content-block.component.scss");
+const css = require("./content-block.component.css");
 
 const template = document.createElement("template");
 template.innerHTML = `<style>${css}</style>${html}`;

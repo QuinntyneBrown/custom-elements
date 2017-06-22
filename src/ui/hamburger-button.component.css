@@ -1,0 +1,17 @@
+
+:host {
+    display:inline-block;
+    width:15px;
+    height:19px;
+    background: #5dc2ca;    
+    padding: 2px 0px 0px 5px;
+    cursor:pointer;
+}
+
+:host > div {
+    width: 15px;
+    height: 1.5px;
+    background: #fff;
+    margin: 3.5px 0;
+    border-radius: 1px;
+}

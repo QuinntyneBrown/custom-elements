@@ -1,8 +1,4 @@
-const html = require("./paginator.component.html");
-const css = require("./paginator.component.scss");
-
 const template = document.createElement("template");
-template.innerHTML = `<style>${css}</style>${html}`;
 
 export interface IPagedList<T> {
     data: Array<T>;
