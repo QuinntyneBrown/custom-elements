@@ -1,8 +1,11 @@
-const html = require("./content-block.component.html");
-const css = require("./content-block.component.css");
+declare var System: any;
 
 const template = document.createElement("template");
-template.innerHTML = `<style>${css}</style>${html}`;
+
+const promises = Promise.all([
+    System.import("./content-block.component.html"),
+    System.import("./content-block.component.css")
+]);
 
 export class ContentBlockComponent extends HTMLElement {
     constructor() {
@@ -22,20 +25,39 @@ export class ContentBlockComponent extends HTMLElement {
     public get imgHTMLElement(): HTMLImageElement { return this.shadowRoot.querySelector("img"); }
     
     static get observedAttributes () {
-        return [];
+        return [
+            "content-block"
+        ];
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+        const assests = await promises;
+
+        template.innerHTML = `<style>${assests[1]}</style>${assests[0]}`; 
+        
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
         this._bind();
     }
 
     private async _bind() {
-        this.headlineHTMLElement.textContent = this.headline1;
-        this.bodyHTMLElement.textContent = this.body;
-        this.imgHTMLElement.src = this.imageUrl;
+
     }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        switch (name) {
+            case "content-block":
+                this.contentBlock = JSON.parse(newValue);
+                this.style.backgroundImage = `url("${this.contentBlock.imageUrl}")`;
+                this.heading1Element.innerHTML = this.contentBlock.heading1;
+                this.heading2Element.innerHTML = this.contentBlock.heading2;
+                break;
+        }
+    }
+
+    public contentBlock: any;
+    public get heading1Element(): HTMLElement { return this.shadowRoot.querySelector("h2") as HTMLElement; }
+    public get heading2Element(): HTMLElement { return this.shadowRoot.querySelector("h3") as HTMLElement; }
 }
 
 customElements.define(`ce-content-block`,ContentBlockComponent);

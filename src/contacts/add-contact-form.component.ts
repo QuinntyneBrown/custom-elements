@@ -6,6 +6,7 @@ const promises = Promise.all([
     System.import("./add-contact-form.component.html"),
     System.import("./add-contact-form.component.css")
 ]);
+
 export const ADD_CONTACT_FORM_SUBMITTED = "[AddContactForm] ADD_CONTACT_FORM_SUBMITTED";
 
 export interface Contact {
