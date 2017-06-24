@@ -26,7 +26,7 @@ gulp.task('compile', ['clean'], function () {
 
 });
 
-gulp.task('copy', ['clean'], () => {
+gulp.task('copy', ['clean','compile'], () => {
     return gulp.src(['./src/**/*.{css,html}']).pipe(gulp.dest('dist'));
 });
 

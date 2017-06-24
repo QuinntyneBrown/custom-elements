@@ -3,6 +3,7 @@ export * from "./call-to-action.component";
 export * from "./card.component";
 export * from "./carousel.component";
 export * from "./data-grid.component";
+export * from "./dots-button.component";
 export * from "./footer.component";
 export * from "./hamburger-button.component";
 export * from "./header.component";

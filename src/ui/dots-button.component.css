@@ -1,0 +1,17 @@
+:host {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    contain:content;
+}
+
+div {
+    display:inline-block;
+    width:calc(15%);
+    margin: 0 5%;
+    height:22%;
+    border-radius:50%;
+    background-color:#000;
+}
+
+
