@@ -134,6 +134,7 @@
     <Content Include="src\ui\nav.component.css">
       <DependentUpon>nav.component.html</DependentUpon>
     </Content>
+    <Content Include="src\ui\popover\popover.component.html" />
     <Content Include="src\ui\tag-group.component.css">
       <DependentUpon>tag-group.component.html</DependentUpon>
     </Content>
@@ -157,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+    <Folder Include="src\ui\modal\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -246,6 +248,14 @@
     <TypeScriptCompile Include="src\ui\nav.component.ts">
       <DependentUpon>nav.component.html</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\ui\popover\popover.component.ts" />
+    <TypeScriptCompile Include="src\ui\popover\popover.d.ts" />
+    <TypeScriptCompile Include="src\ui\popover\popover.service.ts" />
+    <TypeScriptCompile Include="src\ui\popover\position.ts" />
+    <TypeScriptCompile Include="src\ui\popover\rectangle.ts" />
+    <TypeScriptCompile Include="src\ui\popover\ruler.ts" />
+    <TypeScriptCompile Include="src\ui\popover\space.ts" />
+    <TypeScriptCompile Include="src\ui\popover\translate-xy.ts" />
     <TypeScriptCompile Include="src\ui\tag-group.component.ts">
       <DependentUpon>tag-group.component.html</DependentUpon>
     </TypeScriptCompile>
@@ -261,6 +271,10 @@
     <TypeScriptCompile Include="src\ui\toolbar.component.ts">
       <DependentUpon>toolbar.component.html</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\ui\popover\index.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\ui\popover\popover.component.css" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
 </Project>

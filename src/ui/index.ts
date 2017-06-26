@@ -1,3 +1,4 @@
+export * from "./popover";
 export * from "./button.component";
 export * from "./call-to-action.component";
 export * from "./card.component";
