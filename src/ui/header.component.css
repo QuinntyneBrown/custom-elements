@@ -30,23 +30,13 @@ ce-hamburger-button {
     width: calc(100% - 5px);
     margin: 0 auto;
     text-align:left;
-    padding:0px 0px 0px 5px;
+    padding:0px 0px 0px 0px;
 }
 
 .container::after {
     display:block;
     clear:both;
     content: " ";
-}
-
-ce-link.title {
-    display:inline-block;
-    margin:0px 15px 0px 0px;
-    font-size:1.25em;
-    line-height:3em;
-    color:#fff;
-    font-weight:800;
-    letter-spacing:0px;        
 }
 
 ce-link {
@@ -79,7 +69,8 @@ ce-link {
     }
 
     .container {
-        padding:0px 0px 0px 20px;
+        padding:0px 0px 0px 0px;
+        margin:0 auto;
     }
 
     .hamburger-button-container {

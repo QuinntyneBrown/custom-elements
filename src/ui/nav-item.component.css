@@ -1,4 +1,7 @@
 :host {
-    display:block;
+    display:flex;
+    justify-content:center;
+    align-content:center;
     contain:content;
+    text-transform:uppercase;
 }
