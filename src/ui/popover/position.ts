@@ -8,8 +8,13 @@ export class Position {
         private _ruler: Ruler,
         private _space: Space,
         private _translateXY: {(element:HTMLElement, x:number, y:number):HTMLElement}
-    ) {
+    ) { }
 
+    private static _instance;
+
+    public static get instance() {
+        this._instance = this._instance || new Position(Ruler.instance, Space.instance,translateXY);
+        return this._instance;
     }
 
     public somewhere = (a: HTMLElement, b: HTMLElement, space: number, directionPriorityList: Array<string>) => {

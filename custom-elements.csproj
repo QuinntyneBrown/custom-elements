@@ -6,8 +6,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
+    <ProductVersion></ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{2580F151-CD63-4282-8917-3B2CC0638C27}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -22,8 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.2</TypeScriptToolsVersion>
     <TypeScriptEmitDecoratorMetadata>true</TypeScriptEmitDecoratorMetadata>
     <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
@@ -155,6 +153,8 @@
     <Content Include="src\ui\nav.component.html" />
     <Content Include="src\ui\nav-item.component.html" />
     <Content Include="src\ui\dots-button.component.html" />
+    <Content Include="src\ui\popover\popover-container.component.css" />
+    <Content Include="src\ui\popover\popover-container.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -178,8 +178,7 @@
           <IISUrl>http://localhost:63361/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl></CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
@@ -272,6 +271,7 @@
       <DependentUpon>toolbar.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\ui\popover\index.ts" />
+    <TypeScriptCompile Include="src\ui\popover\popover-container.component.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="src\ui\popover\popover.component.css" />

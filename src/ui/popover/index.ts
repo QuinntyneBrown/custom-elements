@@ -1,3 +1,4 @@
+export * from "./popover-container.component";
 export * from "./popover.component";
 export * from "./popover.service";
 export * from "./position";

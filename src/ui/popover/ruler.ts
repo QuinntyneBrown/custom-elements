@@ -5,6 +5,13 @@ export class Ruler implements IRuler {
         this.measure = this.measure.bind(this);
     }
 
+    private static _instance;
+
+    public static get instance() {
+        this._instance = this._instance || new Ruler(document);
+        return this._instance;
+    }
+
     public measure(element: HTMLElement): Promise<Rectangle> {
         return new Promise((resolve) => {
             if (this._document.body.contains(element)) {

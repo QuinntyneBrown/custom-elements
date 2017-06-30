@@ -1,15 +1,26 @@
-﻿export class PopoverService {
+﻿import {Position} from "./position";
+
+export class PopoverService {
     constructor() { }
 
-    public show(options: {templateHTML:string}): Promise<any> {
-        return new Promise((resolve) => {
+    private static _instance = null;
 
+    public static get instance() {
+        this._instance = this._instance || new PopoverService();
+        return this._instance;
+    }
+
+    public show(options: { template: HTMLTemplateElement, target: HTMLElement }): Promise<{ hide: { (): Promise<any> } }> {
+        const documentFragment = options.template.content;
+        
+        return new Promise((resolve) => {
+            resolve(this)
         });
     }
 
     public hide(): Promise<any> {
         return new Promise((resolve) => {
-
+            resolve();
         });
     }
 
@@ -25,6 +36,5 @@
     public transitionDurationInMilliseconds: number;
 
     public nativeElement: HTMLElement;
-
-    public templateHTML: string;
+    
 }

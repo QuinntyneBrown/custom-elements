@@ -1,8 +1,12 @@
 ﻿import {Rectangle} from "./rectangle";
 
-export class Space {
+export class Space {    
+    private static _instance;
 
-    constructor() { }
+    public static get instance() {
+        this._instance = this._instance || new Space();
+        return this._instance;
+    }
 
     public above(spaceNeed: number, rectangle: Rectangle) {
         return false;
